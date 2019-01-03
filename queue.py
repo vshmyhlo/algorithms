@@ -1,0 +1,2 @@
+class Queue(object):
+    pass
