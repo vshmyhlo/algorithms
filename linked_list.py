@@ -16,10 +16,11 @@ class LinkedList(object):
         if self.node is None:
             raise IndexError('pop from empty list')
 
-        value, next = self.node
-        self.node = next
+        node = self.node
+        self.node = node.next
         self.size -= 1
-        return value
+
+        return node.value
 
     def __len__(self):
         return self.size
