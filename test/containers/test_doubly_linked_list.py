@@ -1,4 +1,4 @@
-from doubly_linked_list import DoublyLinkedList
+from containers.doubly_linked_list import DoublyLinkedList
 import pytest
 
 

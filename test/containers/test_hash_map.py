@@ -1,5 +1,5 @@
 import pytest
-from hash_map import HashMap
+from containers.hash_map import HashMap
 
 
 def test_getitem_setitem():

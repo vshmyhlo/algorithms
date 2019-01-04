@@ -1,17 +1,17 @@
-from linked_list import LinkedList
+from containers.stack import Stack
 import pytest
 
 
 def test_append_pop():
-    xs = LinkedList()
+    xs = Stack()
 
     assert len(xs) == 0
 
     with  pytest.raises(IndexError):
         xs.pop()
 
-    xs.append(1)
-    xs.append(2)
+    xs.push(1)
+    xs.push(2)
     assert len(xs) == 2
     assert xs.pop() == 2
     assert len(xs) == 1
