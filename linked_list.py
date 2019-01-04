@@ -1,4 +1,6 @@
-# TODO: test
+from collections import namedtuple
+
+Node = namedtuple('Node', ['value', 'next'])
 
 
 class LinkedList(object):
@@ -6,8 +8,8 @@ class LinkedList(object):
         self.size = 0
         self.node = None
 
-    def append(self, item):
-        self.node = item, self.node
+    def append(self, value):
+        self.node = Node(value=value, next=self.node)
         self.size += 1
 
     def pop(self):
