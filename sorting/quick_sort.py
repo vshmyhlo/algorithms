@@ -1,7 +1,7 @@
 import numpy as np
 
 
-def sort(xs):
+def quick_sort(xs):
     if len(xs) <= 1:
         return xs
 
@@ -18,7 +18,7 @@ def sort(xs):
         else:
             equal.append(x)
 
-    xs = sort(less) + equal + sort(greater)
+    xs = quick_sort(less) + equal + quick_sort(greater)
 
     return xs
 

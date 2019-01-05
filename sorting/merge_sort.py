@@ -1,10 +1,10 @@
-def sort(xs):
+def merge_sort(xs):
     if len(xs) <= 1:
         return xs
 
     mid = len(xs) // 2
-    left = sort(xs[:mid])
-    right = sort(xs[mid:])
+    left = merge_sort(xs[:mid])
+    right = merge_sort(xs[mid:])
     xs = merge(left, right)
 
     return xs
