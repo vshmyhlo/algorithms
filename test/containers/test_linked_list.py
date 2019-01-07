@@ -2,16 +2,31 @@ from containers.linked_list import LinkedList
 import pytest
 
 
-def test_append_pop():
+def test_push_pop():
     xs = LinkedList()
 
     assert len(xs) == 0
 
-    with  pytest.raises(IndexError):
+    with pytest.raises(IndexError):
         xs.pop()
 
-    xs.append(1)
-    xs.append(2)
+    xs.push(1)
+    xs.push(2)
+    xs.push(3)
+
+    assert len(xs) == 3
+    assert xs.pop() == 3
     assert len(xs) == 2
-    assert xs.pop() == 2
-    assert len(xs) == 1
+
+
+def test_iter():
+    xs = LinkedList()
+
+    assert list(xs) == []
+
+    xs.push(1)
+    xs.push(2)
+    xs.pop()
+    xs.push(3)
+
+    assert list(xs) == [3, 1]

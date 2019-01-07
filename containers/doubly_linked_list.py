@@ -1,18 +1,17 @@
-class Node(object):
-    def __init__(self, prev, value, next):
-        self.prev = prev
-        self.value = value
-        self.next = next
-
-
 class DoublyLinkedList(object):
+    class Node(object):
+        def __init__(self, prev, value, next):
+            self.prev = prev
+            self.value = value
+            self.next = next
+
     def __init__(self):
         self.size = 0
         self.front = None
         self.back = None
 
-    def append_front(self, value):
-        front = Node(prev=None, value=value, next=None)
+    def push_front(self, value):
+        front = self.Node(prev=None, value=value, next=None)
         link(front, self.front)
         self.front = front
 
@@ -21,8 +20,8 @@ class DoublyLinkedList(object):
 
         self.size += 1
 
-    def append_back(self, value):
-        back = Node(prev=None, value=value, next=None)
+    def push_back(self, value):
+        back = self.Node(prev=None, value=value, next=None)
         link(self.back, back)
         self.back = back
 

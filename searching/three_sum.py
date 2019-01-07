@@ -1,8 +1,7 @@
 from searching.binary_search import binary_search
 
-# TODO:
 
-import itertools
+# TODO:  find better than simple brute force
 
 
 def three_sum(xs):
@@ -12,13 +11,14 @@ def three_sum(xs):
 
     for i in range(size):
         for j in range(i + 1, size):
-            index = binary_search(xs[j + 1:], -(xs[i] + xs[j]))
-            if index is not None:
-                result += 1
+            # # TODO: checks only first matching number
+            # index = binary_search(xs[j + 1:], -(xs[i] + xs[j]))
+            # if index is not None:
+            #     result += 1
 
-            # for k in range(j + 1, size):
-            #     if -(xs[i] + xs[j]) == xs[k]:
-            #         result += 1
+            for k in range(j + 1, size):
+                if -(xs[i] + xs[j]) == xs[k]:
+                    result += 1
 
     # for values in itertools.combinations(xs, 2):
     #     index = binary_search(xs, -sum(values))

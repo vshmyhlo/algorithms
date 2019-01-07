@@ -2,6 +2,8 @@ from containers.doubly_linked_list import DoublyLinkedList
 import pytest
 
 
+# TODO: iter
+
 def test_append_pop():
     xs = DoublyLinkedList()
 
@@ -13,9 +15,9 @@ def test_append_pop():
     with pytest.raises(IndexError):
         xs.pop_back()
 
-    xs.append_front(1)
-    xs.append_back(2)
-    xs.append_back(3)
+    xs.push_front(1)
+    xs.push_back(2)
+    xs.push_back(3)
     assert len(xs) == 3
 
     assert xs.pop_front() == 1
