@@ -1,9 +1,9 @@
 import numpy as np
-from sorting.merge_sort import merge_sort
+from sorting.selection_sort import selection_sort
 
 
 def test_sorting():
     xs = list(np.random.randint(0, 1000, size=[1000]))
     copy = xs.copy()
-    assert merge_sort(xs) == sorted(xs)
+    assert selection_sort(xs) == sorted(xs)
     assert xs == copy
