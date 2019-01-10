@@ -1,46 +1,9 @@
-from collections import namedtuple
-
-
-class LinkedListStack(object):
-    Node = namedtuple('Node', ['value', 'next'])
-
-    def __init__(self):
-        self.size = 0
-        self.node = None
-
-    def push(self, value):
-        self.node = self.Node(value=value, next=self.node)
-        self.size += 1
-
-    def pop(self):
-        if self.node is None:
-            raise IndexError('pop from empty {}'.format(self.__class__.__name__))
-
-        node = self.node
-        self.node = node.next
-        self.size -= 1
-
-        return node.value
-
-    def __len__(self):
-        return self.size
-
-    def __iter__(self):
-        node = self.node
-
-        while node is not None:
-            yield node.value
-
-            node = node.next
-
-
-# TODO: use array
-class ArrayStack(object):
+class Array(object):
     def __init__(self):
         self.values = [None]
         self.size = 0
 
-    def push(self, value):
+    def append(self, value):
         if self.size == len(self.values):
             self.resize(len(self.values) * 2)
 
@@ -67,6 +30,18 @@ class ArrayStack(object):
             values[i] = self.values[i]
 
         self.values = values
+
+    def __getitem__(self, i):
+        if i not in range(self.size):
+            raise IndexError('array index out of range')
+
+        return self.values[i]
+
+    def __setitem__(self, i, value):
+        if i not in range(self.size):
+            raise IndexError('array index out of range')
+
+        self.values[i] = value
 
     def __len__(self):
         return self.size

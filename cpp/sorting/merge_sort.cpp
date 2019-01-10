@@ -6,29 +6,21 @@
 #include <iostream>
 #include <algorithm>
 
+
 template<typename T>
 void merge(std::vector<T> &xs, size_t lo, size_t mid, size_t hi) {
-    std::vector<T> left(mid - lo);
-    std::vector<T> right(hi - mid);
+    std::vector<T> tmp(hi - lo);
 
-    for (size_t i = 0; i < mid - lo; i++) {
-        left[i] = xs[lo + i];
-    }
+    size_t i = lo;
+    size_t j = mid;
+    size_t k = 0;
 
-    for (size_t i = 0; i < hi - mid; i++) {
-        right[i] = xs[mid + i];
-    }
-
-    size_t i = 0;
-    size_t j = 0;
-    size_t k = lo;
-
-    while (i < mid - lo && j < hi - mid) {
-        if (left[i] < right[j]) {
-            xs[k] = left[i];
+    while (i < mid && j < hi) {
+        if (xs[i] < xs[j]) {
+            tmp[k] = xs[i];
             i++;
         } else {
-            xs[k] = right[j];
+            tmp[k] = xs[j];
             j++;
         }
 
@@ -36,19 +28,22 @@ void merge(std::vector<T> &xs, size_t lo, size_t mid, size_t hi) {
     }
 
 
-    while (i < mid - lo) {
-        xs[k] = left[i];
+    while (i < mid) {
+        tmp[k] = xs[i];
         i++;
         k++;
     }
 
-    while (j < hi - mid) {
-        xs[mid + j] = right[j];
+    while (j < hi) {
+        tmp[k] = xs[j];
         j++;
         k++;
     }
-}
 
+    for (int i = 0; i < hi - lo; i++) {
+        xs[lo + i] = tmp[i];
+    }
+}
 
 template<typename T>
 void merge_sort(std::vector<T> &xs, size_t lo, size_t hi) {
