@@ -1,3 +1,4 @@
+# TODO: use array
 class PriorityQueue(object):
     def __init__(self):
         self.values = [None]
@@ -34,8 +35,8 @@ class PriorityQueue(object):
 
             if self.values[i] < self.values[j]:
                 self.values[i], self.values[j] = self.values[j], self.values[i]
-            # else:
-            #     break
+            else:
+                break
 
             i = j
 

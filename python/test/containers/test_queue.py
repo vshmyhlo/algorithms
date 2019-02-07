@@ -2,7 +2,9 @@ from containers.queue import LinkedListQueue, ArrayQueue
 import pytest
 
 
-@pytest.fixture(params=[LinkedListQueue, ArrayQueue])
+# TODO: ArrayQueue
+# @pytest.fixture(params=[LinkedListQueue, ArrayQueue])
+@pytest.fixture(params=[LinkedListQueue])
 def xs(request):
     return request.param()
 

@@ -1,6 +1,7 @@
 import numpy as np
 
 
+# TODO:
 def quick_sort(xs):
     if len(xs) <= 1:
         return xs

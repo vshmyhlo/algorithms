@@ -1,14 +1,14 @@
 # TODO:
-
+# TODO: use linked list
+# TODO: iter
 
 class HashMap(object):
-    def __init__(self, buckets=16):
+    def __init__(self, buckets=256):
         self.buckets = [[] for _ in range(buckets)]
         self.size = 0
 
     def __getitem__(self, key):
-        h = hash(key)
-        bucket = self.buckets[h % len(self.buckets)]
+        bucket = self.buckets[self.key_to_index(key)]
 
         for k, v in bucket:
             if k == key:
@@ -17,8 +17,7 @@ class HashMap(object):
         raise KeyError(key)
 
     def __setitem__(self, key, value):
-        h = hash(key)
-        bucket = self.buckets[h % len(self.buckets)]
+        bucket = self.buckets[self.key_to_index(key)]
 
         for i, (k, v) in enumerate(bucket):
             if k == key:
@@ -29,8 +28,7 @@ class HashMap(object):
         self.size += 1
 
     def __delitem__(self, key):
-        h = hash(key)
-        bucket = self.buckets[h % len(self.buckets)]
+        bucket = self.buckets[self.key_to_index(key)]
 
         for i, (k, v) in enumerate(bucket):
             if k == key:
@@ -44,8 +42,7 @@ class HashMap(object):
         return self.size
 
     def __contains__(self, key):
-        h = hash(key)
-        bucket = self.buckets[h % len(self.buckets)]
+        bucket = self.buckets[self.key_to_index(key)]
 
         for k, v in bucket:
             if k == key:
@@ -53,4 +50,5 @@ class HashMap(object):
 
         return False
 
-
+    def key_to_index(self, key):
+        return (hash(key) & 0x7fffffff) % len(self.buckets)

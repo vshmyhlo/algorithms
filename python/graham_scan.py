@@ -2,7 +2,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
+# TODO: use ABC everywhere
 # TODO:
+
 # def ccw(a, b, c):
 #     ba = (b[1] - a[1]) / (b[0] - a[0])
 #     ca = (c[1] - a[1]) / (c[0] - a[0])
