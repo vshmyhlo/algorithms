@@ -26,13 +26,13 @@ class DepthFirstSearch(object):
 
         return reversed(path)
 
-    def depth_first_search(self, graph, source):
-        self.visited[source] = True
+    def depth_first_search(self, graph, v):
+        self.visited[v] = True
 
-        for v in graph.adjacent(source):
-            if self.visited[v]:
+        for w in graph.adjacent(v):
+            if self.visited[w]:
                 continue
 
-            # TODO: is order important?
-            self.edge_to[v] = source
-            self.depth_first_search(graph, v)
+            # TODO: is order important? think about parallel edges
+            self.edge_to[w] = v
+            self.depth_first_search(graph, w)

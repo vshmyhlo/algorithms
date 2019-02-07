@@ -31,20 +31,19 @@ class BreadthFirstSearch(object):
         return self.dist_to[v]
 
     def breadth_first_search(self, graph, source):
+        self.visited[source] = True
         self.dist_to[source] = 0
-
         queue = Queue()
         queue.enqueue(source)
 
         while len(queue) > 0:
             v = queue.dequeue()
-            self.visited[v] = True
 
             for w in graph.adjacent(v):
                 if self.visited[w]:
                     continue
 
+                self.visited[w] = True
                 self.edge_to[w] = v
                 self.dist_to[w] = self.dist_to[v] + 1
-
                 queue.enqueue(w)
