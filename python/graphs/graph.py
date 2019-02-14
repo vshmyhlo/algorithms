@@ -12,6 +12,8 @@ class Graph(object):
     def adjacent(self, v):
         return self.adj_list[v]
 
+    # TODO: should be in class?
+   
     def degree(self, v):
         return sum(1 for _ in self.adjacent(v))
 
