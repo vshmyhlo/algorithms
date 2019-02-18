@@ -11,6 +11,7 @@ import numpy as np
 #
 #     return ca > ba
 
+# TODO: ccw?
 def ccw(a, b, c):
     area = (b[0] - a[0]) * (c[1] - a[1]) - (b[1] - a[1]) * (c[0] - a[0])
 
@@ -19,7 +20,10 @@ def ccw(a, b, c):
 
 def graham_scan(points):
     points = points[np.argsort(points[:, 0])]
-    p, points = points[0], points[1:]
+
+    p = points[0]
+    points = points[1:]
+   
     slope = (points[:, 1] - p[1]) / (points[:, 0] - p[0])  # TODO:
     points = points[np.argsort(slope)]
 
