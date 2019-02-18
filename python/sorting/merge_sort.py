@@ -12,7 +12,8 @@ def merge_sort(xs):
 
 def merge(left, right):
     xs = []
-    l, r = 0, 0
+    l = 0
+    r = 0
 
     while l < len(left) and r < len(right):
         if left[l] < right[r]:
