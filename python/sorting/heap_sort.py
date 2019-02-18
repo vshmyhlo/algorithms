@@ -1,14 +1,12 @@
 # TODO: separate inplace from not inplace algorithms
 # TODO: index arithmetic (start from 1)
+# TODO: refactor adding and remove 0 element
 
 def heap_sort(xs):
-    xs = xs.copy()
     xs.insert(0, None)
     construct(xs)
     sort(xs)
-    xs = xs[1:]
-
-    return xs
+    del xs[0]
 
 
 def construct(xs):

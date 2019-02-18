@@ -6,14 +6,9 @@ def insertion_sort(xs, stride):
             else:
                 break
 
-    return xs
-
 
 # TODO:
-
 def shell_sort(xs):
-    xs = xs.copy()
-
     stride = 1
     strides = []
     while stride < len(xs) // 3:
@@ -23,5 +18,3 @@ def shell_sort(xs):
 
     for stride in strides:
         insertion_sort(xs, stride)
-
-    return xs
