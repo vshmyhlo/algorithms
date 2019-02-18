@@ -20,7 +20,7 @@ def ccw(a, b, c):
 def graham_scan(points):
     points = points[np.argsort(points[:, 0])]
     p, points = points[0], points[1:]
-    slope = (points[:, 1] - p[1]) / (points[:, 0] - p[0])
+    slope = (points[:, 1] - p[1]) / (points[:, 0] - p[0])  # TODO:
     points = points[np.argsort(slope)]
 
     hull = [p, points[0]]

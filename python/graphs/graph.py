@@ -1,7 +1,7 @@
 class Graph(object):
-    def __init__(self, n_v):
-        self.adj_list = [[] for _ in range(n_v)]
-        self.num_vertices = n_v
+    def __init__(self, num_vertices):
+        self.adj_list = [[] for _ in range(num_vertices)]
+        self.num_vertices = num_vertices
         self.num_edges = 0
 
     def add_edge(self, v, w):
@@ -13,7 +13,7 @@ class Graph(object):
         return self.adj_list[v]
 
     # TODO: should be in class?
-   
+
     def degree(self, v):
         return sum(1 for _ in self.adjacent(v))
 
