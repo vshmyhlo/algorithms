@@ -1,6 +1,6 @@
 # TODO:
 # TODO: use linked list
-# TODO: iter
+
 
 class HashMap(object):
     def __init__(self, buckets=256):
@@ -49,6 +49,11 @@ class HashMap(object):
                 return True
 
         return False
+
+    def __iter__(self):
+        for bucket in self.buckets:
+            for k, _ in bucket:
+                yield k
 
     def key_to_index(self, key):
         return (hash(key) & 0x7fffffff) % len(self.buckets)

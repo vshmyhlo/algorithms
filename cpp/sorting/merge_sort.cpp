@@ -6,6 +6,8 @@
 #include <iostream>
 #include <algorithm>
 
+// TODO: init aux once
+
 
 template<typename T>
 void merge(std::vector<T> &xs, size_t lo, size_t mid, size_t hi) {

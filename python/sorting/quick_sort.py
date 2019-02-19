@@ -1,7 +1,6 @@
 from shuffle import shuffle
 
 
-# TODO:
 def quick_sort(xs):
     shuffle(xs)
     quick_subsort(xs, 0, len(xs))
@@ -16,6 +15,7 @@ def quick_subsort(xs, lo, hi):
     quick_subsort(xs, mid + 1, hi)
 
 
+# TODO: check partition
 def partition(xs, lo, hi):
     p = xs[lo]
     l = lo + 1

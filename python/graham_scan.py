@@ -2,9 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-# TODO: use ABC everywhere
 # TODO:
-
 # def ccw(a, b, c):
 #     ba = (b[1] - a[1]) / (b[0] - a[0])
 #     ca = (c[1] - a[1]) / (c[0] - a[0])
@@ -23,7 +21,7 @@ def graham_scan(points):
 
     p = points[0]
     points = points[1:]
-   
+
     slope = (points[:, 1] - p[1]) / (points[:, 0] - p[0])  # TODO:
     points = points[np.argsort(slope)]
 
@@ -42,11 +40,16 @@ def graham_scan(points):
     return hull
 
 
-points = np.random.standard_normal(size=[100, 2])
-hull = graham_scan(points)
+def main():
+    points = np.random.standard_normal(size=[100, 2])
+    hull = graham_scan(points)
 
-plt.scatter(points[:, 0], points[:, 1], s=5)
-for i in range(1, len(hull)):
-    plt.arrow(*hull[i - 1], *hull[i] - hull[i - 1])
-plt.arrow(*hull[-1], *hull[0] - hull[-1])
-plt.show()
+    plt.scatter(points[:, 0], points[:, 1], s=5)
+    for i in range(1, len(hull)):
+        plt.arrow(*hull[i - 1], *hull[i] - hull[i - 1])
+    plt.arrow(*hull[-1], *hull[0] - hull[-1])
+    plt.show()
+
+
+if __name__ == '__main__':
+    main()

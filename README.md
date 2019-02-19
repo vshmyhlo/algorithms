@@ -1,5 +1,10 @@
 # Implementation of common algorithms and data structures 
 
+## Misc
+* [Array Shuffle](./python/shuffle.py)
+* (WIP) [Graham Scan (Convex Hull)](./python/graham_scan.py)
+* (WIP) [Union Find](./python/union_find.py)
+
 ## Searching
 * [Binary Search](./python/searching/binary_search.py)
 
