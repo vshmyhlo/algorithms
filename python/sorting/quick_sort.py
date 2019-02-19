@@ -1,41 +1,38 @@
-import numpy as np
+from shuffle import shuffle
 
 
 # TODO:
 def quick_sort(xs):
-    if len(xs) <= 1:
-        return xs
+    shuffle(xs)
+    quick_subsort(xs, 0, len(xs))
 
-    less = []
-    greater = []
-    equal = []
-    pivot = xs[np.random.randint(len(xs))]
 
-    for x in xs:
-        if x < pivot:
-            less.append(x)
-        elif x > pivot:
-            greater.append(x)
-        else:
-            equal.append(x)
+def quick_subsort(xs, lo, hi):
+    if hi - lo <= 1:
+        return
 
-    xs = quick_sort(less) + equal + quick_sort(greater)
+    mid = partition(xs, lo, hi)
+    quick_subsort(xs, lo, mid)
+    quick_subsort(xs, mid + 1, hi)
 
-    return xs
 
-# def sort(xs):
-#     xs = xs.copy()
-#
-#     if len(xs) <= 1:
-#         return xs
-#
-#     p = 0
-#     for i in range(1, len(xs)):
-#         if xs[i] < xs[p]:
-#             xs[i], xs[p] = xs[p], xs[i]
-#         p += 1
-#
-#     sort(xs[:p])
-#     sort(xs[p + 1:])
-#
-#     return xs
+def partition(xs, lo, hi):
+    p = xs[lo]
+    l = lo + 1
+    r = hi - 1
+
+    while True:
+        while xs[l] <= p and l != hi - 1:
+            l += 1
+
+        while p <= xs[r] and r != lo:
+            r -= 1
+
+        if l >= r:
+            break
+
+        xs[l], xs[r] = xs[r], xs[l]
+
+    xs[lo], xs[r] = xs[r], xs[lo]
+
+    return r

@@ -1,5 +1,8 @@
 # Implementation of common algorithms and data structures 
 
+## Searching
+* [Binary Search](./python/searching/binary_search.py)
+
 ## Sorting
 * [Selection Sort](./python/sorting/selection_sort.py)
 * [Insertion Sort](./python/sorting/insertion_sort.py)
