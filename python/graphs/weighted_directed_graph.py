@@ -1,14 +1,11 @@
-class WeightedGraph(object):
+class WeightedDirectedGraph(object):
     def __init__(self, num_vertices):
         self.adj_list = [[] for _ in range(num_vertices)]
         self.num_vertices = num_vertices
         self.num_edges = 0
 
     def add_edge(self, e):
-        v = e.either()
-        w = e.other(v)
-        self.adj_list[v].append(e)
-        self.adj_list[w].append(e)
+        self.adj_list[e.fr].append(e)
         self.num_edges += 1
 
     def adjacent(self, v):
@@ -16,27 +13,14 @@ class WeightedGraph(object):
 
     def edges(self):
         for v in range(self.num_vertices):
-            for e in self.adjacent(v):
-                if v < e.other(v):
-                    yield e
+            yield from self.adjacent(v)
 
 
-class WeightedEdge(object):
-    def __init__(self, v, w, weight):
-        self.v = v
-        self.w = w
+class WeightedDirectedEdge(object):
+    def __init__(self, fr, to, weight):
+        self.fr = fr
+        self.to = to
         self.weight = weight
-
-    def either(self):
-        return self.v
-
-    def other(self, vertex):
-        if vertex == self.v:
-            return self.w
-        elif vertex == self.w:
-            return self.v
-        else:
-            raise ValueError('vertex {} is not in the edge'.format(vertex))
 
     def __eq__(self, other):
         return self.weight.__eq__(other.weight)
@@ -57,4 +41,4 @@ class WeightedEdge(object):
         return self.weight.__ge__(other.weight)
 
     def __repr__(self):
-        return '{}({}, {}, {})'.format(WeightedEdge.__name__, self.v, self.w, self.weight)
+        return '{}({}, {}, {})'.format(WeightedDirectedEdge.__name__, self.fr, self.to, self.weight)

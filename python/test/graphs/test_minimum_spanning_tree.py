@@ -1,6 +1,6 @@
 import pytest
 from graphs.weighted_graph import WeightedGraph, WeightedEdge
-from graphs.minimum_spanning_tree import minimum_spanning_tree
+from graphs.minimum_spanning_tree import kruskal_mst, prim_mst
 
 
 @pytest.fixture
@@ -27,8 +27,25 @@ def graph():
     return g
 
 
-def test_minimum_spanning_tree(graph):
-    edges = list(minimum_spanning_tree(graph))
+def test_kruskal_mst(graph):
+    edges = list(kruskal_mst(graph))
+    weight = sum(e.weight for e in edges)
+
+    assert edges == [
+        WeightedEdge(0, 7, 0.16),
+        WeightedEdge(2, 3, 0.17),
+        WeightedEdge(1, 7, 0.19),
+        WeightedEdge(0, 2, 0.26),
+        WeightedEdge(5, 7, 0.28),
+        WeightedEdge(4, 5, 0.35),
+        WeightedEdge(6, 2, 0.4),
+    ]
+
+    assert weight == 1.81
+
+
+def test_prim_mst(graph):
+    edges = list(prim_mst(graph))
     weight = sum(e.weight for e in edges)
 
     assert edges == [

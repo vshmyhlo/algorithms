@@ -33,7 +33,8 @@
 * [Connected Components](./python/graphs/connected_components.py)
 * [Strong Connected Components](./python/graphs/strong_connected_components.py)
 * [Topological Sort](./python/graphs/topological_sort.py)
-* [Minimum Spanning Tree](./python/graphs/minimum_spanning_tree.py)
+* [Minimum Spanning Tree (Kruskal, Prim)](./python/graphs/minimum_spanning_tree.py)
+* [Shortest Path (Dijkstra)](./python/graphs/shortest_path.py)
 
 ## TODO
 * bipartite graph
