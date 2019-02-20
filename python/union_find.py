@@ -1,4 +1,4 @@
-# TODO: finish
+# TODO: finish, move to graphs
 
 class UnionFind(object):
     def __init__(self, size):
@@ -25,13 +25,12 @@ class UnionFind(object):
 
         return i
 
-
-x = UnionFind(4)
-# x.union(0, 1)
-x.union(1, 0)
-x.union(2, 0)
-x.union(3, 0)
-# x.union(2, 3)
-# x.union(0, 2)
-print(x.size)
-print(x.id_to_parent)
+# x = UnionFind(4)
+# # x.union(0, 1)
+# x.union(1, 0)
+# x.union(2, 0)
+# x.union(3, 0)
+# # x.union(2, 3)
+# # x.union(0, 2)
+# print(x.size)
+# print(x.id_to_parent)

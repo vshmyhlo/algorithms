@@ -14,6 +14,12 @@ class WeightedGraph(object):
     def adjacent(self, v):
         return self.adj_list[v]
 
+    def edges(self):
+        for v in range(self.num_vertices):
+            for e in self.adjacent(v):
+                if v < e.other(v):
+                    yield e
+
 
 class WeightedEdge(object):
     def __init__(self, v, w, weight):
@@ -52,3 +58,6 @@ class WeightedEdge(object):
 
     def __ge__(self, other):
         return self.weight.__ge__(other.weight)
+
+    def __repr__(self):
+        return 'WeightedEdge({}, {}, {})'.format(self.v, self.w, self.weight)
