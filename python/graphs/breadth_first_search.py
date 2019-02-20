@@ -1,4 +1,5 @@
 from containers.queue import LinkedListQueue as Queue
+from containers.stack import LinkedListStack as Stack
 
 
 class BreadthFirstSearch(object):
@@ -14,18 +15,17 @@ class BreadthFirstSearch(object):
         return self.visited[v]
 
     def path_to(self, v):
-        path = []
-
         if not self.has_path_to(v):
             return None
 
+        path = Stack()
         while v != self.source:
-            path.append(v)
+            path.push(v)
             v = self.edge_to[v]
 
-        path.append(self.source)
+        path.push(self.source)
 
-        return reversed(path)
+        return path
 
     def distance_to(self, v):
         return self.dist_to[v]

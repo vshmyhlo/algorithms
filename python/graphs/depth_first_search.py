@@ -1,4 +1,5 @@
 # TODO: check self-loops
+from containers.stack import LinkedListStack as Stack
 
 
 class DepthFirstSearch(object):
@@ -13,18 +14,17 @@ class DepthFirstSearch(object):
         return self.visited[v]
 
     def path_to(self, v):
-        path = []
-
         if not self.has_path_to(v):
             return None
 
+        path = Stack()
         while v != self.source:
-            path.append(v)
+            path.push(v)
             v = self.edge_to[v]
 
-        path.append(self.source)
+        path.push(self.source)
 
-        return reversed(path)
+        return path
 
     def depth_first_search(self, graph, v):
         self.visited[v] = True

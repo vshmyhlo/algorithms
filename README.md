@@ -28,6 +28,7 @@
 * [Graph](./python/graphs/graph.py)
 * [Directed Graph](./python/graphs/directed_graph.py)
 * [Edge Weighted Graph](./python/graphs/weighted_graph.py)
+* [Edge Weighted Directed Graph](./python/graphs/weighted_directed_graph.py)
 * [Depth First Search](./python/graphs/depth_first_search.py)
 * [Breadth First Search](./python/graphs/breadth_first_search.py)
 * [Connected Components](./python/graphs/connected_components.py)
