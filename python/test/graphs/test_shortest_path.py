@@ -35,7 +35,7 @@ def test_has_path_to(sp):
 
 # TODO: more cases
 def test_path_to(sp):
-    assert sp.path_to(3) == [
+    assert list(sp.path_to(3)) == [
         WeightedDirectedEdge(0, 4, 9),
         WeightedDirectedEdge(4, 5, 4),
         WeightedDirectedEdge(5, 2, 1),
@@ -45,4 +45,4 @@ def test_path_to(sp):
 
 # TODO: more cases
 def test_distance_to(sp):
-    assert sp.dist_to(3) == 17
+    assert sp.distance_to(3) == 17

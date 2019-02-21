@@ -33,3 +33,15 @@ def test_enqueue_dequeue(pq):
 
     assert len(pq) == 0
     assert values_sorted == [i for i, _ in sorted(values, key=lambda x: x[1])]
+
+
+def test_contains(pq):
+    pq.push(200, 2.0)
+    pq.push(100, 1.0)
+    pq.push(300, 3.0)
+
+    assert 200 in pq
+    pq.pop_min()
+    assert 200 in pq
+    pq.pop_min()
+    assert 200 not in pq

@@ -21,6 +21,7 @@
 * [Stack](./python/containers/stack.py)
 * [Queue](./python/containers/queue.py)
 * [Priority Queue](./python/containers/priority_queue.py)
+* [Index Priority Queue](./python/containers/index_priority_queue.py)
 * [Hash Map](./python/containers/hash_map.py)
 * [Binary Search Tree](./python/containers/binary_search_tree.py)
 

@@ -41,6 +41,9 @@ class IndexPriorityQueue(object):
 
         self.swim(i)
 
+    def __contains__(self, key):
+        return self.key_to_ind[key] is not None
+
     def __len__(self):
         return self.size - 1
 

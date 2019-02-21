@@ -1,4 +1,5 @@
 from containers.stack import LinkedListStack as Stack
+from containers.index_priority_queue import IndexPriorityQueue
 
 
 class ShortedPath(object):
@@ -8,7 +9,13 @@ class ShortedPath(object):
         self.dist_to = [float('inf')] * graph.num_vertices
         self.dist_to[source] = 0
 
-        pass
+        priority = IndexPriorityQueue(graph.num_vertices)
+        priority.push(source, self.dist_to[source])
+
+        while len(priority) > 0:
+            v = priority.pop_min()
+            for e in graph.adjacent(v):
+                self.relax(e, priority)
 
     # TODO:
     def has_path_to(self, v):
@@ -29,9 +36,14 @@ class ShortedPath(object):
     def distance_to(self, v):
         return self.dist_to[v]
 
-    def relax(self, e):
+    def relax(self, e, priority):
         new_dist = self.dist_to[e.fr] + e.weight
 
         if new_dist < self.dist_to[e.to]:
             self.dist_to[e.to] = new_dist
             self.edge_to[e.to] = e
+
+            if e.to in priority:
+                priority.decrease(e.to, self.dist_to[e.to])
+            else:
+                priority.push(e.to, self.dist_to[e.to])
