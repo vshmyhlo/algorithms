@@ -1,4 +1,6 @@
 # TODO: use array
+# TODO: do not use first element
+# TODO: use swap
 class PriorityQueue(object):
     def __init__(self):
         self.values = [None]
@@ -7,7 +9,7 @@ class PriorityQueue(object):
         self.values.append(value)
         self.swim(len(self.values) - 1)
 
-    def pop_max(self):
+    def pop_min(self):
         if len(self.values) == 1:
             raise IndexError('pop from empty {}'.format(self.__class__.__name__))
 
@@ -18,10 +20,13 @@ class PriorityQueue(object):
 
         return value
 
+    def __len__(self):
+        return len(self.values) - 1
+
     def swim(self, i):
         while i >= 2:
             j = i // 2
-            if self.values[j] < self.values[i]:
+            if self.values[j] > self.values[i]:
                 self.values[j], self.values[i] = self.values[i], self.values[j]
 
             i = j
@@ -30,15 +35,12 @@ class PriorityQueue(object):
         while i * 2 < len(self.values):
             j = i * 2
 
-            if j + 1 < len(self.values) and self.values[j] < self.values[j + 1]:
+            if j + 1 < len(self.values) and self.values[j] > self.values[j + 1]:
                 j += 1
 
-            if self.values[i] < self.values[j]:
+            if self.values[i] > self.values[j]:
                 self.values[i], self.values[j] = self.values[j], self.values[i]
             else:
                 break
 
             i = j
-
-    def __len__(self):
-        return len(self.values) - 1
