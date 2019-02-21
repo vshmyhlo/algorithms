@@ -5,7 +5,7 @@ from graphs.shortest_path import ShortedPath
 
 @pytest.fixture
 def sp():
-    g = WeightedDirectedGraph(8)
+    g = WeightedDirectedGraph(9)
     g.add_edge(WeightedDirectedEdge(0, 1, 5))
     g.add_edge(WeightedDirectedEdge(0, 7, 8))
     g.add_edge(WeightedDirectedEdge(0, 4, 9))
@@ -32,6 +32,8 @@ def test_has_path_to(sp):
     for v in range(8):
         assert sp.has_path_to(v)
 
+    assert not sp.has_path_to(8)
+
 
 # TODO: more cases
 def test_path_to(sp):
@@ -42,7 +44,10 @@ def test_path_to(sp):
         WeightedDirectedEdge(2, 3, 3)
     ]
 
+    assert sp.path_to(8) is None
+
 
 # TODO: more cases
 def test_distance_to(sp):
     assert sp.distance_to(3) == 17
+    assert sp.distance_to(8) == float('inf')
