@@ -3,6 +3,9 @@ from graphs.weighted_graph import WeightedGraph, WeightedEdge
 from graphs.minimum_spanning_tree import kruskal_mst, prim_mst
 
 
+# TODO: use parameterized fixture for different implementations
+
+
 @pytest.fixture
 def graph():
     g = WeightedGraph(8)
