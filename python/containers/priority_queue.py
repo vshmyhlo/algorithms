@@ -13,9 +13,8 @@ class PriorityQueue(object):
         if len(self.values) == 1:
             raise IndexError('pop from empty {}'.format(self.__class__.__name__))
 
-        value = self.values[1]
-        self.values[1] = self.values[-1]
-        self.values.pop()
+        self.swap(1, -1)
+        value = self.values.pop()
         self.sink(1)
 
         return value
@@ -23,11 +22,12 @@ class PriorityQueue(object):
     def __len__(self):
         return len(self.values) - 1
 
+    # TODO: break?
     def swim(self, i):
         while i >= 2:
             j = i // 2
             if self.values[j] > self.values[i]:
-                self.values[j], self.values[i] = self.values[i], self.values[j]
+                self.swap(i, j)
 
             i = j
 
@@ -39,8 +39,11 @@ class PriorityQueue(object):
                 j += 1
 
             if self.values[i] > self.values[j]:
-                self.values[i], self.values[j] = self.values[j], self.values[i]
+                self.swap(i, j)
             else:
                 break
 
             i = j
+
+    def swap(self, i, j):
+        self.values[i], self.values[j] = self.values[j], self.values[i]

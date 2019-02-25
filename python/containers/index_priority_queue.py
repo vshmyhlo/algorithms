@@ -47,6 +47,7 @@ class IndexPriorityQueue(object):
     def __len__(self):
         return self.size - 1
 
+    # TODO: break?
     def swim(self, i):
         while i >= 2:
             j = i // 2
