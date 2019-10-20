@@ -123,20 +123,20 @@ class BinarySearchTree(object):
         raise NotImplementedError()
 
 
-def setitem(root, key, value):
-    if root is None:
+def setitem(node, key, value):
+    if node is None:
         return Node(key, value)
 
-    if key < root.key:
-        root.left = setitem(root.left, key, value)
-    elif key > root.key:
-        root.right = setitem(root.right, key, value)
+    if key < node.key:
+        node.left = setitem(node.left, key, value)
+    elif key > node.key:
+        node.right = setitem(node.right, key, value)
     else:
-        root.value = value
+        node.value = value
 
-    root.size = 1 + size(root.left) + size(root.right)
+    node.size = 1 + size(node.left) + size(node.right)
 
-    return root
+    return node
 
 
 def delitem(root, key):

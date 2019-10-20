@@ -24,6 +24,7 @@
 * [Index Priority Queue](./python/containers/index_priority_queue.py)
 * [Hash Map](./python/containers/hash_map.py)
 * [Binary Search Tree](./python/containers/binary_search_tree.py)
+* [(Basic) Left-Leaning Red-Black Tree](./python/containers/red_black_tree.py)
 
 ## Graphs
 * [Graph](./python/graphs/graph.py)

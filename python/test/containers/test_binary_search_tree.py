@@ -1,5 +1,5 @@
-import pytest
 import numpy as np
+import pytest
 from containers.binary_search_tree import BinarySearchTree
 
 
