@@ -1,49 +1,50 @@
 # Implementation of common algorithms and data structures 
 
 ## Misc
-* [Array Shuffle](./python/shuffle.py)
-* (WIP) [Graham Scan (Convex Hull)](./python/graham_scan.py)
-* (WIP) [Union Find](./python/union_find.py)
+* [Array Shuffle](./shuffle.py)
+* (WIP) [Graham Scan (Convex Hull)](./graham_scan.py)
+* (WIP) [Union Find](./union_find.py)
 
 ## Searching
-* [Binary Search](./python/searching/binary_search.py)
+* [Binary Search](./searching/binary_search.py)
 
 ## Sorting
-* [Selection Sort](./python/sorting/selection_sort.py)
-* [Insertion Sort](./python/sorting/insertion_sort.py)
-* [Shell Sort](./python/sorting/shell_sort.py)
-* [Heap Sort](./python/sorting/heap_sort.py)
-* [Merge Sort](./python/sorting/merge_sort.py)
-* [Quick Sort](./python/sorting/quick_sort.py)
+* [Selection Sort](./sorting/selection_sort.py)
+* [Insertion Sort](./sorting/insertion_sort.py)
+* [Shell Sort](./sorting/shell_sort.py)
+* [Heap Sort](./sorting/heap_sort.py)
+* [Merge Sort](./sorting/merge_sort.py)
+* [Quick Sort](./sorting/quick_sort.py)
 
 ## Containers
-* [Resizing Array](./python/containers/array.py)
-* [Stack](./python/containers/stack.py)
-* [Queue](./python/containers/queue.py)
-* [Priority Queue](./python/containers/priority_queue.py)
-* [Index Priority Queue](./python/containers/index_priority_queue.py)
-* [Hash Map](./python/containers/hash_map.py)
-* [Binary Search Tree](./python/containers/binary_search_tree.py)
-* [(Basic) Left-Leaning Red-Black Tree](./python/containers/red_black_tree.py)
+* [Resizing Array](./containers/array.py)
+* [Stack](./containers/stack.py)
+* [Queue](./containers/queue.py)
+* [Priority Queue](./containers/priority_queue.py)
+* [Index Priority Queue](./containers/index_priority_queue.py)
+* [Hash Map](./containers/hash_map.py)
+* [Binary Search Tree](./containers/binary_search_tree.py)
+* [(Basic) Left-Leaning Red-Black Tree](./containers/red_black_tree.py)
 
 ## Graphs
-* [Graph](./python/graphs/graph.py)
-* [Directed Graph](./python/graphs/directed_graph.py)
-* [Edge Weighted Graph](./python/graphs/weighted_graph.py)
-* [Edge Weighted Directed Graph](./python/graphs/weighted_directed_graph.py)
-* [Depth First Search](./python/graphs/depth_first_search.py)
-* [Breadth First Search](./python/graphs/breadth_first_search.py)
-* [Connected Components](./python/graphs/connected_components.py)
-* [Strong Connected Components](./python/graphs/strong_connected_components.py)
-* [Topological Sort](./python/graphs/topological_sort.py)
-* [Minimum Spanning Tree (Kruskal, Prim)](./python/graphs/minimum_spanning_tree.py)
-* [Shortest Path (Dijkstra)](./python/graphs/shortest_path.py)
+* [Graph](./graphs/graph.py)
+* [Directed Graph](./graphs/directed_graph.py)
+* [Edge Weighted Graph](./graphs/weighted_graph.py)
+* [Edge Weighted Directed Graph](./graphs/weighted_directed_graph.py)
+* [Depth First Search](./graphs/depth_first_search.py)
+* [Breadth First Search](./graphs/breadth_first_search.py)
+* [Connected Components](./graphs/connected_components.py)
+* [Strong Connected Components](./graphs/strong_connected_components.py)
+* [Topological Sort](./graphs/topological_sort.py)
+* [Minimum Spanning Tree (Kruskal, Prim)](./graphs/minimum_spanning_tree.py)
+* [Shortest Path (Dijkstra)](./graphs/shortest_path.py)
 
 ## TODO
 * AVL tree
 * R-way Trie
 * Ternary Trie
 * bipartite graph
+* kdtree
 * find cycle
 * find cycle that uses each edge exactly once (euler cycle)
 * render graph on a place without edges crossing
