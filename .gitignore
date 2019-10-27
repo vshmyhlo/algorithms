@@ -1,5 +1,4 @@
-__pycache__
 .idea
-.cache
+.ipynb_checkpoints
 .pytest_cache
-cmake-build-debug
+venv
