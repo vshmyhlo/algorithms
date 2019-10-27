@@ -25,6 +25,7 @@
 * [Hash Map](./containers/hash_map.py)
 * [Binary Search Tree](./containers/binary_search_tree.py)
 * [(Basic) Left-Leaning Red-Black Tree](./containers/red_black_tree.py)
+* [Ternary Trie](./containers/ternary_trie.py)
 
 ## Graphs
 * [Graph](./graphs/graph.py)
@@ -42,7 +43,6 @@
 ## TODO
 * AVL tree
 * R-way Trie
-* Ternary Trie
 * bipartite graph
 * kdtree
 * find cycle
