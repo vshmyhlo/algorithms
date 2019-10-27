@@ -40,6 +40,9 @@
 * [Shortest Path (Dijkstra)](./python/graphs/shortest_path.py)
 
 ## TODO
+* AVL tree
+* R-way Trie
+* Ternary Trie
 * bipartite graph
 * find cycle
 * find cycle that uses each edge exactly once (euler cycle)

@@ -122,6 +122,15 @@ class BinarySearchTree(object):
     def select(self, key):
         raise NotImplementedError()
 
+    def range_count(self, lo, hi):
+        if hi in self:
+            return self.rank(hi) - self.rank(lo) + 1
+        else:
+            return self.rank(hi) - self.rank(lo)
+
+    def range_search(self, lo, hi):
+        yield from range_search(self.root, lo, hi)
+
 
 def setitem(node, key, value):
     if node is None:
@@ -237,3 +246,17 @@ def delete_max(root):
     root.size = 1 + size(root.left) + size(root.right)
 
     return root
+
+
+def range_search(node, lo, hi):
+    if node is None:
+        return
+
+    if lo <= node.key:
+        yield from range_search(node.left, lo, hi)
+
+    if lo <= node.key <= hi:
+        yield node.key
+
+    if node.key <= hi:
+        yield from range_search(node.right, lo, hi)

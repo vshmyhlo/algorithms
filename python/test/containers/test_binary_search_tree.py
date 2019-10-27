@@ -1,5 +1,6 @@
 import numpy as np
 import pytest
+
 from containers.binary_search_tree import BinarySearchTree
 
 
@@ -56,3 +57,35 @@ def test_binary_search_tree():
     assert x.min() == 1
     assert x.max() == 98
     assert len(x) == 97
+
+
+def test_range_operations():
+    rng = np.random.RandomState(42)
+    tree = BinarySearchTree()
+
+    for k in rng.permutation(100):
+        tree[k] = str(k)
+
+    lo, hi = 10, 15
+    count = tree.range_count(lo, hi)
+    search = list(tree.range_search(lo, hi))
+    assert count == len(search)
+    assert search == list(range(10, 15 + 1))
+
+    lo, hi = 9.5, 15.5
+    count = tree.range_count(lo, hi)
+    search = list(tree.range_search(lo, hi))
+    assert count == len(search)
+    assert search == list(range(10, 15 + 1))
+
+    lo, hi = 10, 10
+    count = tree.range_count(lo, hi)
+    search = list(tree.range_search(lo, hi))
+    assert count == 1
+    assert search == [10]
+
+    lo, hi = 3.3, 3.7
+    count = tree.range_count(lo, hi)
+    search = list(tree.range_search(lo, hi))
+    assert count == 0
+    assert search == []
