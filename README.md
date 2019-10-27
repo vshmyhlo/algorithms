@@ -26,6 +26,7 @@
 * [Binary Search Tree](./containers/binary_search_tree.py)
 * [(Basic) Left-Leaning Red-Black Tree](./containers/red_black_tree.py)
 * [Ternary Trie](./containers/ternary_trie.py)
+* [KDTree](./containers/kd_tree.py)
 
 ## Graphs
 * [Graph](./graphs/graph.py)
@@ -44,7 +45,6 @@
 * AVL tree
 * R-way Trie
 * bipartite graph
-* kdtree
 * find cycle
 * find cycle that uses each edge exactly once (euler cycle)
 * render graph on a place without edges crossing
