@@ -26,7 +26,7 @@
 * [Binary Search Tree](./containers/binary_search_tree.py)
 * [(Basic) Left-Leaning Red-Black Tree](./containers/red_black_tree.py)
 * [Ternary Trie](./containers/ternary_trie.py)
-* [KDTree](./containers/kd_tree.py)
+* [KD Tree](./containers/kd_tree.py)
 
 ## Graphs
 * [Graph](./graphs/graph.py)
