@@ -27,6 +27,7 @@
 * [(Basic) Left-Leaning Red-Black Tree](./containers/red_black_tree.py)
 * [Ternary Trie](./containers/ternary_trie.py)
 * [KD Tree](./containers/kd_tree.py)
+* [(Basic) Interval Search Tree](./containers/interval_search_tree.py)
 
 ## Graphs
 * [Graph](./graphs/graph.py)
