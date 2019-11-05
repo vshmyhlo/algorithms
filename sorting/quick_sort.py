@@ -1,38 +1,42 @@
 from shuffle import shuffle
 
 
-def quick_sort(xs):
-    shuffle(xs)
-    quick_subsort(xs, 0, len(xs))
+def quick_sort(seq):
+    shuffle(seq)
+    quick_subsort(seq, 0, len(seq))
 
 
-def quick_subsort(xs, lo, hi):
+def quick_subsort(seq, lo, hi):
     if hi - lo <= 1:
         return
 
-    mid = partition(xs, lo, hi)
-    quick_subsort(xs, lo, mid)
-    quick_subsort(xs, mid + 1, hi)
+    mid = partition(seq, lo, hi)
+    quick_subsort(seq, lo, mid)
+    quick_subsort(seq, mid + 1, hi)
 
 
 # TODO: check partition
-def partition(xs, lo, hi):
-    p = xs[lo]
-    l = lo + 1
-    r = hi - 1
+def partition(seq, lo, hi):
+    k = lo
+    i = lo + 1
+    j = hi - 1
 
     while True:
-        while xs[l] <= p and l != hi - 1:
-            l += 1
+        while seq[i] < seq[k] and i < hi - 1:
+            i += 1
 
-        while p <= xs[r] and r != lo:
-            r -= 1
+        while seq[k] <= seq[j] and lo < j:
+            j -= 1
 
-        if l >= r:
+        if j <= i:
             break
 
-        xs[l], xs[r] = xs[r], xs[l]
+        swap(seq, i, j)
 
-    xs[lo], xs[r] = xs[r], xs[lo]
+    swap(seq, j, k)
 
-    return r
+    return j
+
+
+def swap(seq, i, j):
+    seq[i], seq[j] = seq[j], seq[i]

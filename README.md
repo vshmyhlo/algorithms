@@ -7,6 +7,7 @@
 
 ## Searching
 * [Binary Search](./searching/binary_search.py)
+* [Quick Select](./searching/quick_select.py)
 
 ## Sorting
 * [Selection Sort](./sorting/selection_sort.py)
