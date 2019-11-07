@@ -26,6 +26,7 @@
 * [Hash Map](./containers/hash_map.py)
 * [Binary Search Tree](./containers/binary_search_tree.py)
 * [(Basic) Left-Leaning Red-Black Tree](./containers/red_black_tree.py)
+* [R-Way Trie](./containers/r_way_trie.py)
 * [Ternary Trie](./containers/ternary_trie.py)
 * [KD Tree](./containers/kd_tree.py)
 * [(Basic) Interval Search Tree](./containers/interval_search_tree.py)
