@@ -2,6 +2,8 @@ import math
 import os
 from multiprocessing import Pool
 
+from sorting.merge_sort import merge as basic_merge
+
 
 def group_chunks(chunks, num_chunks):
     for i in range(0, num_chunks, 2):
@@ -29,19 +31,4 @@ def merge(left_right):
     if right is None:
         return left
 
-    seq = []
-    l = 0
-    r = 0
-
-    while l < len(left) and r < len(right):
-        if left[l] < right[r]:
-            seq.append(left[l])
-            l += 1
-        else:
-            seq.append(right[r])
-            r += 1
-
-    seq.extend(left[l:])
-    seq.extend(right[r:])
-
-    return seq
+    return basic_merge(left, right)

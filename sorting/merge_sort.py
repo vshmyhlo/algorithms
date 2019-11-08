@@ -1,29 +1,29 @@
-def merge_sort(xs):
-    if len(xs) <= 1:
-        return xs
+def merge_sort(seq):
+    if len(seq) <= 1:
+        return seq
 
-    mid = len(xs) // 2
-    left = merge_sort(xs[:mid])
-    right = merge_sort(xs[mid:])
-    xs = merge(left, right)
+    mid = len(seq) // 2
+    left = merge_sort(seq[:mid])
+    right = merge_sort(seq[mid:])
+    seq = merge(left, right)
 
-    return xs
+    return seq
 
 
 def merge(left, right):
-    xs = []
+    seq = []
     l = 0
     r = 0
 
     while l < len(left) and r < len(right):
         if left[l] < right[r]:
-            xs.append(left[l])
+            seq.append(left[l])
             l += 1
         else:
-            xs.append(right[r])
+            seq.append(right[r])
             r += 1
 
-    xs.extend(left[l:])
-    xs.extend(right[r:])
+    seq.extend(left[l:])
+    seq.extend(right[r:])
 
-    return xs
+    return seq
