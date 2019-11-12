@@ -16,6 +16,7 @@
 * [Heap Sort](./sorting/heap_sort.py)
 * [Merge Sort](./sorting/merge_sort.py)
 * [Quick Sort](./sorting/quick_sort.py)
+* [3-Way Quick Sort](./sorting/three_way_quick_sort.py)
 
 ## Containers
 * [Resizing Array](./containers/array.py)
