@@ -16,7 +16,7 @@ def merge(left, right):
     r = 0
 
     while l < len(left) and r < len(right):
-        if left[l] < right[r]:
+        if left[l] <= right[r]:
             seq.append(left[l])
             l += 1
         else:
