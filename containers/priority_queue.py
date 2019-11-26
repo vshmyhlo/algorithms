@@ -1,9 +1,13 @@
-# TODO: use array
+from containers.array import Array
+
+
 # TODO: do not use first element
 # TODO: use swap
+
 class PriorityQueue(object):
     def __init__(self):
-        self.values = [None]
+        self.values = Array()
+        self.values.append(None)
 
     def push(self, value):
         self.values.append(value)

@@ -1,6 +1,3 @@
-from searching.binary_search import binary_search
-
-
 # TODO:  find better than simple brute force
 
 

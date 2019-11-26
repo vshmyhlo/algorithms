@@ -32,14 +32,12 @@ class Array(object):
         self.values = values
 
     def __getitem__(self, i):
-        if i not in range(self.size):
-            raise IndexError('array index out of range')
+        i = normalize_index(i, self.size)
 
         return self.values[i]
 
     def __setitem__(self, i, value):
-        if i not in range(self.size):
-            raise IndexError('array index out of range')
+        i = normalize_index(i, self.size)
 
         self.values[i] = value
 
@@ -49,3 +47,13 @@ class Array(object):
     def __iter__(self):
         for i in range(self.size - 1, -1, -1):
             yield self.values[i]
+
+
+def normalize_index(i, size):
+    if i < 0:
+        i = size + i
+
+    if not 0 <= i < size:
+        raise IndexError('array index out of range')
+
+    return i
