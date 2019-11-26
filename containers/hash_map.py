@@ -1,40 +1,55 @@
-# TODO:
-# TODO: use linked list
+class Node(object):
+    def __init__(self, key, value, next):
+        self.key = key
+        self.value = value
+        self.next = next
 
-
+   
 class HashMap(object):
     def __init__(self, buckets=256):
-        self.buckets = [[] for _ in range(buckets)]
+        self.buckets = [None for _ in range(buckets)]
         self.size = 0
 
     def __getitem__(self, key):
-        bucket = self.buckets[self.key_to_index(key)]
+        node = self.buckets[self.key_to_index(key)]
 
-        for k, v in bucket:
-            if k == key:
-                return v
+        while node is not None:
+            if node.key == key:
+                return node.value
+
+            node = node.next
 
         raise KeyError(key)
 
     def __setitem__(self, key, value):
-        bucket = self.buckets[self.key_to_index(key)]
+        node = self.buckets[self.key_to_index(key)]
 
-        for i, (k, v) in enumerate(bucket):
-            if k == key:
-                bucket[i] = (k, value)
+        while node is not None:
+            if node.key == key:
+                node.value = value
                 return
 
-        bucket.append((key, value))
+            node = node.next
+
+        self.buckets[self.key_to_index(key)] = Node(key, value, self.buckets[self.key_to_index(key)])
         self.size += 1
 
     def __delitem__(self, key):
-        bucket = self.buckets[self.key_to_index(key)]
+        node = self.buckets[self.key_to_index(key)]
 
-        for i, (k, v) in enumerate(bucket):
-            if k == key:
-                del bucket[i]
+        prev = None
+        while node is not None:
+            if node.key == key:
+                if prev is None:
+                    self.buckets[self.key_to_index(key)] = node.next
+                else:
+                    prev.next = node.next
+
                 self.size -= 1
                 return
+
+            prev = node
+            node = node.next
 
         raise KeyError(key)
 
@@ -42,18 +57,22 @@ class HashMap(object):
         return self.size
 
     def __contains__(self, key):
-        bucket = self.buckets[self.key_to_index(key)]
+        node = self.buckets[self.key_to_index(key)]
 
-        for k, v in bucket:
-            if k == key:
+        while node is not None:
+            if node.key == key:
                 return True
+
+            node = node.next
 
         return False
 
     def __iter__(self):
-        for bucket in self.buckets:
-            for k, _ in bucket:
-                yield k
+        for node in self.buckets:
+            while node is not None:
+                yield node.key
+
+                node = node.next
 
     def key_to_index(self, key):
         return (hash(key) & 0x7fffffff) % len(self.buckets)

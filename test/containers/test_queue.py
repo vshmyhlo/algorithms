@@ -1,35 +1,36 @@
-from containers.queue import LinkedListQueue, ArrayQueue
 import pytest
+
+from containers.queue import LinkedListQueue
 
 
 # TODO: ArrayQueue
 # @pytest.fixture(params=[LinkedListQueue, ArrayQueue])
 @pytest.fixture(params=[LinkedListQueue])
-def xs(request):
+def seq(request):
     return request.param()
 
 
-def test_enqueue_dequeue(xs):
-    assert len(xs) == 0
+def test_enqueue_dequeue(seq):
+    assert len(seq) == 0
 
     with pytest.raises(IndexError):
-        xs.dequeue()
+        seq.dequeue()
 
-    xs.enqueue(1)
-    xs.enqueue(2)
-    xs.enqueue(3)
+    seq.enqueue(1)
+    seq.enqueue(2)
+    seq.enqueue(3)
 
-    assert len(xs) == 3
-    assert xs.dequeue() == 1
-    assert len(xs) == 2
+    assert len(seq) == 3
+    assert seq.dequeue() == 1
+    assert len(seq) == 2
 
 
-def test_iter(xs):
-    assert list(xs) == []
+def test_iter(seq):
+    assert list(seq) == []
 
-    xs.enqueue(1)
-    xs.enqueue(2)
-    xs.dequeue()
-    xs.enqueue(3)
+    seq.enqueue(1)
+    seq.enqueue(2)
+    seq.dequeue()
+    seq.enqueue(3)
 
-    assert list(xs) == [2, 3]
+    assert list(seq) == [2, 3]

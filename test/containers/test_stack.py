@@ -1,33 +1,34 @@
-from containers.stack import LinkedListStack, ArrayStack
 import pytest
+
+from containers.stack import LinkedListStack, ArrayStack
 
 
 @pytest.fixture(params=[LinkedListStack, ArrayStack])
-def xs(request):
+def seq(request):
     return request.param()
 
 
-def test_push_pop(xs):
-    assert len(xs) == 0
+def test_push_pop(seq):
+    assert len(seq) == 0
 
     with pytest.raises(IndexError):
-        xs.pop()
+        seq.pop()
 
-    xs.push(1)
-    xs.push(2)
-    xs.push(3)
+    seq.push(1)
+    seq.push(2)
+    seq.push(3)
 
-    assert len(xs) == 3
-    assert xs.pop() == 3
-    assert len(xs) == 2
+    assert len(seq) == 3
+    assert seq.pop() == 3
+    assert len(seq) == 2
 
 
-def test_iter(xs):
-    assert list(xs) == []
+def test_iter(seq):
+    assert list(seq) == []
 
-    xs.push(1)
-    xs.push(2)
-    xs.pop()
-    xs.push(3)
+    seq.push(1)
+    seq.push(2)
+    seq.pop()
+    seq.push(3)
 
-    assert list(xs) == [3, 1]
+    assert list(seq) == [3, 1]

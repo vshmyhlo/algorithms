@@ -1,32 +1,49 @@
-from containers.linked_list import LinkedList
 import pytest
 
+from containers.linked_list import LinkedList
 
-def test_push_pop():
-    xs = LinkedList()
 
-    assert len(xs) == 0
+@pytest.fixture
+def seq():
+    return LinkedList()
+
+
+def test_push_pop(seq):
+    assert len(seq) == 0
 
     with pytest.raises(IndexError):
-        xs.pop()
+        seq.pop()
 
-    xs.push(1)
-    xs.push(2)
-    xs.push(3)
+    seq.push(1)
+    seq.push(2)
+    seq.push(3)
 
-    assert len(xs) == 3
-    assert xs.pop() == 3
-    assert len(xs) == 2
+    assert len(seq) == 3
+    assert seq.pop() == 3
+    assert len(seq) == 2
 
 
-def test_iter():
-    xs = LinkedList()
+def test_iter(seq):
+    assert list(seq) == []
 
-    assert list(xs) == []
+    seq.push(1)
+    seq.push(2)
+    seq.pop()
+    seq.push(3)
 
-    xs.push(1)
-    xs.push(2)
-    xs.pop()
-    xs.push(3)
+    assert list(seq) == [3, 1]
 
-    assert list(xs) == [3, 1]
+
+def test_delitem(seq):
+    with pytest.raises(IndexError):
+        del seq[0]
+
+    for i in range(3):
+        seq.push(i + 1)
+
+    with pytest.raises(IndexError):
+        del seq[3]
+
+    del seq[1]
+
+    assert list(seq) == [3, 1]
