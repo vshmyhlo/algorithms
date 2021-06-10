@@ -2,7 +2,7 @@ from containers.index_priority_queue import IndexPriorityQueue
 from containers.stack import LinkedListStack as Stack
 
 
-class ShortedPath(object):
+class ShortestPath(object):
     def __init__(self, graph, source):
         self.source = source
         self.visited = [False] * graph.num_vertices

@@ -43,7 +43,7 @@
 * [Strong Connected Components](./graphs/strong_connected_components.py)
 * [Topological Sort](./graphs/topological_sort.py)
 * [Minimum Spanning Tree (Kruskal, Prim)](./graphs/minimum_spanning_tree.py)
-* [Shortest Path (Dijkstra)](./graphs/shortest_path.py)
+* [Shortest Path (Dijkstra)](graphs/shortest_path_1.py)
 
 ## TODO
 * AVL tree
