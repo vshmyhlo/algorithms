@@ -3,7 +3,6 @@ import pytest
 
 from containers.binary_search_tree import BinarySearchTree
 
-
 # TODO: refactor random state rng
 # TODO: implement all methods (select, etc.)
 

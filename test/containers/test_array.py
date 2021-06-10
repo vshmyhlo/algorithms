@@ -1,5 +1,6 @@
-from containers.array import Array
 import pytest
+
+from containers.array import Array
 
 
 def test_getitem_setitem():

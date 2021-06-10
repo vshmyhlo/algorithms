@@ -29,7 +29,7 @@ class TernaryTrie(object):
         return self[key] is not None
 
     def __iter__(self):
-        return iterate(self.root, '')
+        return iterate(self.root, "")
 
     def keys_with_prefix(self, prefix):
         node = getitem(self.root, prefix, 0)
@@ -91,7 +91,12 @@ def delitem(node, key, depth):
     else:
         node.mid = delitem(node.mid, key, depth + 1)
 
-    if node.value is None and node.left is None and node.mid is None and node.right is None:
+    if (
+        node.value is None
+        and node.left is None
+        and node.mid is None
+        and node.right is None
+    ):
         return None
 
     return node

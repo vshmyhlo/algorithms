@@ -4,16 +4,16 @@ from containers.r_way_trie import RWayTrie
 def test_r_way_trie():
     tree = RWayTrie()
     keys = [
-        'by',
-        'sea',
-        'sells',
-        'she',
-        'shells',
-        'shore',
-        'the',
+        "by",
+        "sea",
+        "sells",
+        "she",
+        "shells",
+        "shore",
+        "the",
     ]
 
-    assert tree[''] is None
+    assert tree[""] is None
 
     for k in keys:
         assert k not in tree

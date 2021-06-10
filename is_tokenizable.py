@@ -7,8 +7,8 @@ import time
 
 from tqdm import tqdm
 
-
 # TODO: remove short and long words (outliers)
+
 
 def is_tokenizable(text, vocab):
     max_len = max(map(len, vocab))
@@ -27,7 +27,7 @@ def is_tokenizable(text, vocab):
         #             return True
 
         for l in range(min(max_len, len(text) - start), 0, -1):
-            if text[start:start + l] in vocab:
+            if text[start : start + l] in vocab:
                 if aux(start + l):
                     cache[start] = True
                     return cache[start]
@@ -40,10 +40,10 @@ def is_tokenizable(text, vocab):
 
 chars = set(string.ascii_lowercase)
 
-if not os.path.exists('./vocab.pkl'):
+if not os.path.exists("./vocab.pkl"):
     vocab = set()
-    with open('./wiki-news-300d-1M.vec') as f:
-        for line in tqdm(f, desc='building vocab'):
+    with open("./wiki-news-300d-1M.vec") as f:
+        for line in tqdm(f, desc="building vocab"):
             word, _ = line.split(maxsplit=1)
             word = word.lower()
 
@@ -56,25 +56,25 @@ if not os.path.exists('./vocab.pkl'):
 
             vocab.add(word)
 
-    with open('./vocab.pkl', 'wb') as f:
+    with open("./vocab.pkl", "wb") as f:
         pickle.dump(vocab, f)
 
-with open('./vocab.pkl', 'rb') as f:
+with open("./vocab.pkl", "rb") as f:
     vocab = pickle.load(f)
 
-print('vocab size: {}'.format(len(vocab)))
+print("vocab size: {}".format(len(vocab)))
 
 random.seed(42)
 vocab_list = sorted(vocab)
 print(sys.getrecursionlimit())
 
-text = ''.join(random.choice(vocab_list) for _ in range(900))
+text = "".join(random.choice(vocab_list) for _ in range(900))
 
 t = time.time()
 print(is_tokenizable(text, vocab))
 print(time.time() - t)
 
-text += 'X'
+text += "X"
 
 t = time.time()
 print(is_tokenizable(text, vocab))

@@ -20,7 +20,7 @@ def parallel_merge_sort(seq, num_workers=os.cpu_count()):
             chunks = pool.imap(merge, chunks)
             num_chunks = math.ceil(num_chunks / 2)
 
-        seq, = chunks
+        (seq,) = chunks
 
         return seq
 

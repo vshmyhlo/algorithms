@@ -41,4 +41,6 @@ class WeightedDirectedEdge(object):
         return self.weight.__ge__(other.weight)
 
     def __repr__(self):
-        return '{}({}, {}, {})'.format(WeightedDirectedEdge.__name__, self.fr, self.to, self.weight)
+        return "{}({}, {}, {})".format(
+            WeightedDirectedEdge.__name__, self.fr, self.to, self.weight
+        )

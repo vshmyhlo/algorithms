@@ -12,7 +12,7 @@ class Array(object):
 
     def pop(self):
         if self.size == 0:
-            raise IndexError('pop from empty {}'.format(self.__class__.__name__))
+            raise IndexError("pop from empty {}".format(self.__class__.__name__))
 
         self.size -= 1
         value = self.values[self.size]
@@ -54,6 +54,6 @@ def normalize_index(i, size):
         i = size + i
 
     if not 0 <= i < size:
-        raise IndexError('array index out of range')
+        raise IndexError("array index out of range")
 
     return i

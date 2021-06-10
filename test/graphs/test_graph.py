@@ -1,4 +1,5 @@
 import pytest
+
 from graphs.graph import Graph
 
 

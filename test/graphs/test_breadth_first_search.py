@@ -1,6 +1,7 @@
 import pytest
-from graphs.graph import Graph
+
 from graphs.breadth_first_search import BreadthFirstSearch
+from graphs.graph import Graph
 
 
 @pytest.fixture

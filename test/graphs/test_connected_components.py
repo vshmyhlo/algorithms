@@ -1,6 +1,7 @@
 import pytest
-from graphs.graph import Graph
+
 from graphs.connected_components import ConnectedComponents
+from graphs.graph import Graph
 
 
 @pytest.fixture

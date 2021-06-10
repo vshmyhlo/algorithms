@@ -1,4 +1,5 @@
 import numpy as np
+
 from searching.binary_search import binary_search
 
 

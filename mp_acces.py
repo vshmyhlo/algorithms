@@ -1,7 +1,7 @@
 import os
 import random
 import time
-from multiprocessing import Process, Pipe, Queue
+from multiprocessing import Pipe, Process, Queue
 
 
 class Cache(object):
@@ -18,7 +18,7 @@ class Cache(object):
         time.sleep(random.uniform(0, 0.1))
         res = recv_c.recv()
 
-        print('match: {}'.format(pid == res))
+        print("match: {}".format(pid == res))
 
     def join(self):
         self.task_q.put(None)
@@ -38,7 +38,7 @@ class Cache(object):
 
 def worker(cache):
     for _ in range(10):
-        cache[random.choice(list('abcdefg'))] = random.randint(0, 9)
+        cache[random.choice(list("abcdefg"))] = random.randint(0, 9)
 
 
 cache = Cache()
@@ -48,6 +48,6 @@ for p in ps:
     p.start()
 for p in ps:
     p.join()
-print('ps joined')
+print("ps joined")
 cache.join()
-print('cache joined')
+print("cache joined")

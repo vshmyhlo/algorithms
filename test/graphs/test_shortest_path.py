@@ -1,6 +1,8 @@
 import pytest
-from graphs.weighted_directed_graph import WeightedDirectedGraph, WeightedDirectedEdge
+
 from graphs.shortest_path import ShortedPath
+from graphs.weighted_directed_graph import (WeightedDirectedEdge,
+                                            WeightedDirectedGraph)
 
 
 @pytest.fixture
@@ -41,7 +43,7 @@ def test_path_to(sp):
         WeightedDirectedEdge(0, 4, 9),
         WeightedDirectedEdge(4, 5, 4),
         WeightedDirectedEdge(5, 2, 1),
-        WeightedDirectedEdge(2, 3, 3)
+        WeightedDirectedEdge(2, 3, 3),
     ]
 
     assert sp.path_to(8) is None
@@ -50,4 +52,4 @@ def test_path_to(sp):
 # TODO: more cases
 def test_distance_to(sp):
     assert sp.distance_to(3) == 17
-    assert sp.distance_to(8) == float('inf')
+    assert sp.distance_to(8) == float("inf")

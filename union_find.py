@@ -1,5 +1,6 @@
 # TODO: finish, move to graphs
 
+
 class UnionFind(object):
     def __init__(self, size):
         self.id_to_parent = list(range(size))
@@ -24,6 +25,7 @@ class UnionFind(object):
             i = self.id_to_parent[i]
 
         return i
+
 
 # x = UnionFind(4)
 # # x.union(0, 1)

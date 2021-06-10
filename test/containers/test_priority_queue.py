@@ -1,5 +1,6 @@
-import pytest
 import numpy as np
+import pytest
+
 from containers.priority_queue import PriorityQueue
 
 size = 1000

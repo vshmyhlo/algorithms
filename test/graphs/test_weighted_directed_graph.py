@@ -1,5 +1,7 @@
 import pytest
-from graphs.weighted_directed_graph import WeightedDirectedGraph, WeightedDirectedEdge
+
+from graphs.weighted_directed_graph import (WeightedDirectedEdge,
+                                            WeightedDirectedGraph)
 
 
 @pytest.fixture
@@ -21,7 +23,7 @@ def test_graph_adjacent(graph):
     assert edges == [
         WeightedDirectedEdge(0, 1, 0.1),
         WeightedDirectedEdge(0, 2, 0.2),
-        WeightedDirectedEdge(0, 3, 0.3)
+        WeightedDirectedEdge(0, 3, 0.3),
     ]
 
 
@@ -33,5 +35,5 @@ def test_graph_edges(graph):
         WeightedDirectedEdge(0, 2, 0.2),
         WeightedDirectedEdge(0, 3, 0.3),
         WeightedDirectedEdge(1, 2, 1.2),
-        WeightedDirectedEdge(3, 0, 3.0)
+        WeightedDirectedEdge(3, 0, 3.0),
     ]

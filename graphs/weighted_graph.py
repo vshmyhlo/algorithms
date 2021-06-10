@@ -36,7 +36,7 @@ class WeightedEdge(object):
         elif vertex == self.w:
             return self.v
         else:
-            raise ValueError('vertex {} is not in the edge'.format(vertex))
+            raise ValueError("vertex {} is not in the edge".format(vertex))
 
     def __eq__(self, other):
         return self.weight.__eq__(other.weight)
@@ -57,4 +57,6 @@ class WeightedEdge(object):
         return self.weight.__ge__(other.weight)
 
     def __repr__(self):
-        return '{}({}, {}, {})'.format(WeightedEdge.__name__, self.v, self.w, self.weight)
+        return "{}({}, {}, {})".format(
+            WeightedEdge.__name__, self.v, self.w, self.weight
+        )

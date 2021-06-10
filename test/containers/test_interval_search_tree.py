@@ -14,13 +14,13 @@ def test_interval_search_tree():
     ]
 
     for lo, hi in intervals:
-        tree[lo, hi] = 'interval({}, {})'.format(lo, hi)
+        tree[lo, hi] = "interval({}, {})".format(lo, hi)
 
     assert tree.root.max == 24
     assert tree.root.left.max == 18
     assert tree.root.right.max == 24
 
-    tree[16, 22] = 'interval(16, 22)'
+    tree[16, 22] = "interval(16, 22)"
 
     assert tree.root.max == 24
     assert tree.root.left.max == 22

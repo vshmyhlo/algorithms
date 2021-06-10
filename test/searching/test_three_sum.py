@@ -1,5 +1,7 @@
-import numpy as np
 import itertools
+
+import numpy as np
+
 from searching.three_sum import three_sum
 
 

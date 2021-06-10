@@ -70,7 +70,7 @@ class BinarySearchTree(object):
         root = self.root
 
         if root is None:
-            raise ValueError('min of empty {}'.format(self.__class__.__name__))
+            raise ValueError("min of empty {}".format(self.__class__.__name__))
 
         while root.left is not None:
             root = root.left
@@ -81,7 +81,7 @@ class BinarySearchTree(object):
         root = self.root
 
         if root is None:
-            raise ValueError('max of empty {}'.format(self.__class__.__name__))
+            raise ValueError("max of empty {}".format(self.__class__.__name__))
 
         while root.right is not None:
             root = root.right
@@ -90,13 +90,13 @@ class BinarySearchTree(object):
 
     def delete_min(self):
         if self.root is None:
-            raise ValueError('delete_min of empty {}'.format(self.__class__.__name__))
+            raise ValueError("delete_min of empty {}".format(self.__class__.__name__))
 
         self.root = delete_min(self.root)
 
     def delete_max(self):
         if self.root is None:
-            raise ValueError('delete_max of empty {}'.format(self.__class__.__name__))
+            raise ValueError("delete_max of empty {}".format(self.__class__.__name__))
 
         self.root = delete_max(self.root)
 
@@ -104,7 +104,7 @@ class BinarySearchTree(object):
         node, found = floor(self.root, key)
 
         if not found:
-            raise ValueError('floor is outside of {}'.format(self.__class__.__name__))
+            raise ValueError("floor is outside of {}".format(self.__class__.__name__))
 
         return node.key
 
@@ -112,7 +112,7 @@ class BinarySearchTree(object):
         node, found = ceil(self.root, key)
 
         if not found:
-            raise ValueError('ceil is outside of {}'.format(self.__class__.__name__))
+            raise ValueError("ceil is outside of {}".format(self.__class__.__name__))
 
         return node.key
 

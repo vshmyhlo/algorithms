@@ -1,4 +1,5 @@
 import numpy as np
+
 from sorting.merge_sort import merge_sort
 
 

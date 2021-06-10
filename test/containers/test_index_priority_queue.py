@@ -1,7 +1,8 @@
-import pytest
 import numpy as np
-from shuffle import shuffle
+import pytest
+
 from containers.index_priority_queue import IndexPriorityQueue
+from shuffle import shuffle
 
 size = 1000
 
@@ -25,7 +26,7 @@ def test_enqueue_dequeue(pq):
 
     shuffle(values)
     for k, v in values:
-        pq.decrease(k, v - 1.)
+        pq.decrease(k, v - 1.0)
 
     assert len(pq) == size
 

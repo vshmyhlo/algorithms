@@ -7,7 +7,7 @@ class Node(object):
 
 class RWayTrie(object):
     def __init__(self):
-        self.root = Node('')
+        self.root = Node("")
 
     def __getitem__(self, key):
         node = getitem(self.root, key, 0)
@@ -30,7 +30,7 @@ class RWayTrie(object):
         return self[key] is not None
 
     def __iter__(self):
-        return iterate(self.root, '')
+        return iterate(self.root, "")
 
 
 def getitem(node, key, depth):
@@ -85,4 +85,4 @@ def iterate(node, prefix):
 
 
 def index_of(c):
-    return ord(c) - ord('a')
+    return ord(c) - ord("a")

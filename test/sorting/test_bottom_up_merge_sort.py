@@ -1,4 +1,5 @@
 import numpy as np
+
 from sorting.bottom_up_merge_sort import bottom_up_merge_sort
 
 

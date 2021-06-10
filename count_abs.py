@@ -10,7 +10,7 @@ def count_abs(seq, debug=False):
     l = 0
     r = len(seq) - 1
     count = 0
-    current = float('inf')
+    current = float("inf")
 
     while l <= r:
         if debug:
@@ -38,9 +38,13 @@ def count_abs(seq, debug=False):
 
 
 def debug_count_abs(seq, count, current, l, r):
-    print('{} | {} | [{}]'.format(
-        count,
-        current,
-        ','.join(
-            '[{}]'.format(x) if i == l or i == r else ' {} '.format(x)
-            for i, x in enumerate(seq))))
+    print(
+        "{} | {} | [{}]".format(
+            count,
+            current,
+            ",".join(
+                "[{}]".format(x) if i == l or i == r else " {} ".format(x)
+                for i, x in enumerate(seq)
+            ),
+        )
+    )

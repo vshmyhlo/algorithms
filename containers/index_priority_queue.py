@@ -19,7 +19,7 @@ class IndexPriorityQueue(object):
 
     def pop_min(self):
         if self.size == 1:
-            raise IndexError('pop from empty {}'.format(self.__class__.__name__))
+            raise IndexError("pop from empty {}".format(self.__class__.__name__))
 
         j = self.size - 1
         self.swap(1, j)

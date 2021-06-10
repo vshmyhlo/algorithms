@@ -1,4 +1,5 @@
 import numpy as np
+
 from sorting.insertion_sort import insertion_sort
 
 

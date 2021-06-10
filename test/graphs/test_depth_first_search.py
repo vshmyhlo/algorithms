@@ -1,6 +1,7 @@
 import pytest
-from graphs.graph import Graph
+
 from graphs.depth_first_search import DepthFirstSearch
+from graphs.graph import Graph
 
 
 @pytest.fixture

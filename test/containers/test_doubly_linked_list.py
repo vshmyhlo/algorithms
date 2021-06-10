@@ -1,8 +1,9 @@
-from containers.doubly_linked_list import DoublyLinkedList
 import pytest
 
+from containers.doubly_linked_list import DoublyLinkedList
 
 # TODO: iter
+
 
 def test_append_pop():
     xs = DoublyLinkedList()

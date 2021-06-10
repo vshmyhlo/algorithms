@@ -2,6 +2,7 @@
 # TODO: index arithmetic (start from 1)
 # TODO: refactor adding and remove 0 element
 
+
 def heap_sort(xs):
     xs.insert(0, None)
     construct(xs)

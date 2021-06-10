@@ -1,4 +1,5 @@
 import numpy as np
+
 from sorting.selection_sort import selection_sort
 
 

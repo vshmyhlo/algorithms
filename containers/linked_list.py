@@ -15,7 +15,7 @@ class LinkedList(object):
 
     def pop(self):
         if self.head is None:
-            raise IndexError('pop from empty {}'.format(self.__class__.__name__))
+            raise IndexError("pop from empty {}".format(self.__class__.__name__))
 
         node = self.head
         self.head = node.next
@@ -25,7 +25,7 @@ class LinkedList(object):
 
     def __delitem__(self, target):
         if not 0 <= target < self.size:
-            raise IndexError('{} index out of range'.format(self.__class__.__name__))
+            raise IndexError("{} index out of range".format(self.__class__.__name__))
 
         self.head = delitem(self.head, target, 0)
 

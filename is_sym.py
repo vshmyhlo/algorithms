@@ -10,8 +10,8 @@ def is_sym(ps):
     left = ps[ps[:, 0] < mid]
     right = ps[ps[:, 0] > mid]
 
-    left = np.sort(left, axis=0, kind='stable')
-    right = np.sort(right, axis=0, kind='stable')
+    left = np.sort(left, axis=0, kind="stable")
+    right = np.sort(right, axis=0, kind="stable")
 
     left[:, 0] = mid - left[:, 0]
     right[:, 0] = right[:, 0] - mid

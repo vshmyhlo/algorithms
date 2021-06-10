@@ -4,7 +4,7 @@ class Node(object):
         self.value = value
         self.next = next
 
-   
+
 class HashMap(object):
     def __init__(self, buckets=256):
         self.buckets = [None for _ in range(buckets)]
@@ -31,7 +31,9 @@ class HashMap(object):
 
             node = node.next
 
-        self.buckets[self.key_to_index(key)] = Node(key, value, self.buckets[self.key_to_index(key)])
+        self.buckets[self.key_to_index(key)] = Node(
+            key, value, self.buckets[self.key_to_index(key)]
+        )
         self.size += 1
 
     def __delitem__(self, key):
@@ -75,4 +77,4 @@ class HashMap(object):
                 node = node.next
 
     def key_to_index(self, key):
-        return (hash(key) & 0x7fffffff) % len(self.buckets)
+        return (hash(key) & 0x7FFFFFFF) % len(self.buckets)

@@ -1,4 +1,5 @@
 import pytest
+
 from graphs.directed_graph import DirectedGraph
 
 

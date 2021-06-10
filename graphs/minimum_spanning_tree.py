@@ -1,6 +1,5 @@
 from union_find import UnionFind
 
-
 # TODO: stop if v-1 edges in MST
 
 

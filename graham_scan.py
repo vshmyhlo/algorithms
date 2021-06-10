@@ -1,7 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-
 # TODO:
 # def ccw(a, b, c):
 #     ba = (b[1] - a[1]) / (b[0] - a[0])
@@ -51,5 +50,5 @@ def main():
     plt.show()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

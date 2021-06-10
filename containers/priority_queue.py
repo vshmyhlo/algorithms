@@ -1,8 +1,8 @@
 from containers.array import Array
 
-
 # TODO: do not use first element
 # TODO: use swap
+
 
 class PriorityQueue(object):
     def __init__(self):
@@ -15,7 +15,7 @@ class PriorityQueue(object):
 
     def pop_min(self):
         if len(self.values) == 1:
-            raise IndexError('pop from empty {}'.format(self.__class__.__name__))
+            raise IndexError("pop from empty {}".format(self.__class__.__name__))
 
         self.swap(1, -1)
         value = self.values.pop()

@@ -32,7 +32,7 @@ class DoublyLinkedList(object):
 
     def pop_front(self):
         if self.front is None:
-            raise IndexError('pop from empty list')
+            raise IndexError("pop from empty list")
 
         front = self.front
         self.front = front.next
@@ -44,7 +44,7 @@ class DoublyLinkedList(object):
 
     def pop_back(self):
         if self.back is None:
-            raise IndexError('pop from empty list')
+            raise IndexError("pop from empty list")
 
         back = self.back
         self.back = back.prev

@@ -1,7 +1,7 @@
 import pytest
-from graphs.weighted_graph import WeightedGraph, WeightedEdge
-from graphs.minimum_spanning_tree import kruskal_mst, prim_mst
 
+from graphs.minimum_spanning_tree import kruskal_mst, prim_mst
+from graphs.weighted_graph import WeightedEdge, WeightedGraph
 
 # TODO: use parameterized fixture for different implementations
 

@@ -1,4 +1,5 @@
 import pytest
+
 from graphs.directed_graph import DirectedGraph
 from graphs.strong_connected_components import StrongConnectedComponents
 

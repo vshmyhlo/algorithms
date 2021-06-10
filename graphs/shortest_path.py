@@ -1,5 +1,5 @@
-from containers.stack import LinkedListStack as Stack
 from containers.index_priority_queue import IndexPriorityQueue
+from containers.stack import LinkedListStack as Stack
 
 
 class ShortedPath(object):
@@ -7,7 +7,7 @@ class ShortedPath(object):
         self.source = source
         self.visited = [False] * graph.num_vertices
         self.edge_to = [None] * graph.num_vertices
-        self.dist_to = [float('inf')] * graph.num_vertices
+        self.dist_to = [float("inf")] * graph.num_vertices
         self.dist_to[source] = 0
 
         priority = IndexPriorityQueue(graph.num_vertices)

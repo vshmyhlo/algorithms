@@ -22,7 +22,7 @@ class LinkedListQueue(object):
 
     def dequeue(self):
         if self.front is None:
-            raise IndexError('dequeue from empty {}'.format(self.__class__.__name__))
+            raise IndexError("dequeue from empty {}".format(self.__class__.__name__))
 
         front = self.front
         self.front = front.next

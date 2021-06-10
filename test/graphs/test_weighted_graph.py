@@ -1,5 +1,6 @@
 import pytest
-from graphs.weighted_graph import WeightedGraph, WeightedEdge
+
+from graphs.weighted_graph import WeightedEdge, WeightedGraph
 
 
 @pytest.fixture
@@ -25,7 +26,7 @@ def test_graph_adjacent(graph):
     assert edges == [
         WeightedEdge(0, 1, 0.1),
         WeightedEdge(0, 2, 0.2),
-        WeightedEdge(0, 3, 0.3)
+        WeightedEdge(0, 3, 0.3),
     ]
 
 
@@ -36,7 +37,7 @@ def test_graph_edges(graph):
         WeightedEdge(0, 1, 0.1),
         WeightedEdge(0, 2, 0.2),
         WeightedEdge(0, 3, 0.3),
-        WeightedEdge(1, 2, 1.2)
+        WeightedEdge(1, 2, 1.2),
     ]
 
 

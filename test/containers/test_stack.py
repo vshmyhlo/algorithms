@@ -1,6 +1,6 @@
 import pytest
 
-from containers.stack import LinkedListStack, ArrayStack
+from containers.stack import ArrayStack, LinkedListStack
 
 
 @pytest.fixture(params=[LinkedListStack, ArrayStack])
