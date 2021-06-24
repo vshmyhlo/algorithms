@@ -26,6 +26,9 @@ class PriorityQueue(object):
     def __len__(self):
         return len(self.values) - 1
 
+    def __bool__(self):
+        return len(self) > 0
+
     # TODO: break?
     def swim(self, i):
         while i >= 2:
